@@ -1,229 +1,395 @@
- /* ===== Mobile-first base ===== */
+/* ===== Base: Mobile-first ===== */
 body {
   margin: 0;
   font-family: sans-serif;
   background: #f8f9fa;
-  width: 100%;
-  margin: 0 auto;
-  overflow-x: auto; /* يسمح بالتمرير أفقي إذا الشاشة أصغر */
+  color: #333;
 }
-
-header {
-  text-align: center;
-  background: #ffffff;
-  color: #ffffff;
-  padding: 5px 20px;
-  display: flex;
-  border-radius: 8px;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 70px;
-  flex-wrap: wrap; /* لضمان توافق الجوال */
-}
-
-header img {
-  width: 80px; /* أصغر قليلًا للجوال */
-  height: auto;
-  border-radius: 8px;
+.logo {
+  width: 50px;
 }
 
 /* Navbar */
 .navbar {
   display: flex;
-  flex-wrap: wrap; /* للجوال */
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 20px 50px;
   background: #fff;
-  gap: 15px;
-  text-align: center;
+  border-bottom: 1px solid #eee;
 }
 
-.navbar ul {
-  list-style: none;
+.navbar .logo img {
+  height: 40px;
+}
+
+.navbar nav ul {
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
+  list-style: none;
   padding: 0;
   margin: 0;
+  gap: 20px;
 }
 
-.navbar a {
+.navbar nav a {
   text-decoration: none;
   color: #333;
-  position: relative;
+  font-weight: 500;
 }
 
-.navbar a:hover {
-  transform: scale(1.05);
+.auth a {
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.nav-icon {
-  position: relative;
-  font-size: 20px;
-  color: #2b54a7;
-  cursor: pointer;
-}
-
-.nav-icon .count {
-  position: absolute;
-  top: -8px;
-  right: -10px;
-  background-color: #2f56a5;
-  font-size: 12px;
-  border-radius: 50%;
-  padding: 2px 6px;
-  line-height: 1;
-  color: #fff;
-}
-
-.navbar a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background-color: #1f4ed3;
-  transition: width 0.3s ease;
-}
-
-.navbar a:hover::after {
-  width: 100%;
-}
-
-/* Buttons */
 .signup {
-  background: #2F56A5;
+  background: #1e40af;
   color: #fff;
-  padding: 8px 16px;
+  padding: 6px 12px;
   border-radius: 6px;
 }
 
 .signin {
-  margin-right: 10px;
+background: #ffffff;
+  color:#2F56A5;
+  padding: 6px 12px;
   border-radius: 6px;
-  padding: 8px 16px;
+
 }
 
-.signin:hover,
-.signup:hover {
-  background-color: #4582a0;
-  transform: scale(1.05);
+
+.signin:hover {
+    background-color: #4582a0;
+    transform: scale(1.05);
+
 }
 
+
+/* Hero */
 /* Hero */
 .hero {
   position: relative;
-  padding: 30px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   text-align: left;
-  background: #ffffff;
-  overflow: visible;
-  height: auto; /* للجوال */
+  padding:0 50px;
+  background: #f9fafb;
+  overflow: hidden; /* عشان لو النص تحرك ما يكسر البوكس */
 }
 
+.hero-text {
+  max-width: 600px;
+  position: relative;
+  top: 100px; /* ينزل النص لتحت بدون ما يكبر الهيرو */
+}
+
+
+
 .hero h1 {
-  font-size: 28px;
-  margin: 20px;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  line-height: 1.3;
   color: #2F56A5;
 }
 
 .hero p {
-  font-size: 16px;
-  margin: 20px;
+  margin-bottom: 20px;
   color: #54545D;
+  font-size: 20px;
 }
 
-.hero-images {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  margin-top: 0;
-  width: 100%;
-  height: auto;
-  padding: 0 10px;
-}
-.hero-images img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Buttons Hero */
-.btn {
-  display: inline-block;
-  background: #2F56A5;
+.hero .btn {
+  background:#2F56A5;
   color: #fff;
-  padding: 12px 20px;
-  margin: 20px;
+  padding: 12px 22px;
   border-radius: 8px;
   text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
 }
 
-.btn:hover {
-  background: rgb(123, 184, 201);
-  transform: scale(1.05);
+/* الصورة أسفل الهيرو */
+.hero-images {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end; /* يسحب الصورة لليمين */
 }
+
+.hero-images img {
+  width: 95%;   /* تكبير حجم الصورة */
+  max-width: 500px; /* السماح لها تكبر أكثر */
+  height: auto;
+}
+
+
 
 /* Featured Section */
 .featured {
-  max-width: 100%;
-  margin: 20px auto;
-  padding: 0 10px;
+  padding: 40px 20px;
 }
 
-.cards {
+.featured .top-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.featured .top-text p {
+color: #54545D;
+}
+
+.featured .top-text a {
+
+color: #2F56A5;
+text-decoration: none;
+
+}
+
+.featured .cards {
   display: grid;
-  grid-template-columns: 1fr; /* ترتيب عمودي للجوال */
-  gap: 15px;
+  grid-template-columns: repeat(3, 1fr); /* ثلاث أعمدة */
+  gap: 20px;
 }
 
-/* How Section */
-.how {
+.card {
   background: #fff;
-  text-align: center;
-  padding: 30px 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
 }
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card-info {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.card-info h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.card-info p {
+  font-size: 0.9rem;
+  color:#A3A6AB;
+}
+
+.card-info .price {
+  font-weight: bold;
+  color: #A3A6AB;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-top: 1px solid #eee;
+}
+
+.card-actions button {
+  background: #1e40af;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.card-actions a {
+  text-decoration: none;
+  color:#2F56A5;
+  font-weight: bold;
+  background-color: #38C7F433;
+   border-radius: 6px;
+   
+}
+
+/* How it works */
+.how {
+  text-align: center;
+  padding: 50px 20px;
+  background: #fff;
+}
+
+.how h2 {
+  margin-bottom: 10px;
+  color: #2F56A5;
+}
+
+.how p {
+  color: #5A6473;
+}
+
 
 .steps {
   display: flex;
-  flex-direction: row; /* ترتيب عمودي للجوال */
   justify-content: center;
   gap: 20px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.steps a {
+color: #2F56A5;
+text-decoration: none;
+}
+
+.step {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  width: 220px;
+  text-align: center;
+}
+
+.step img {
+  width: 40px;
+  margin-bottom: 10px;
+}
+
+.btnn {
+  display: inline-flex;
+  align-items: center;
+  background:#2F56A5;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.btnn img {
+  width: 20px;
+  margin-right: 8px;
 }
 
 /* Reviews */
 .reviews {
-  background: #38C7F41A;
-  padding: 20px 10px;
   text-align: center;
-  color: #2F56A5;
+  padding: 50px 20px;
+  background: #eaf2ff;
+}
+
+.reviews h2 {
+
+color: #2F56A5;
+
+}
+
+.reviews p {
+
+color: #5A6473;
+}
+
+.reviews img {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 20px;
 }
 
 /* Custom Box */
 .custom-box {
-  background: #2d5db5;
-  padding: 30px 10px;
-  text-align: center;
+  background: #1e40af;
   color: #fff;
-  max-width: 100%;
-  margin: 0 auto;
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 800px;   /* العرض الأقصى للبوكس */
+  margin: 40px auto;  /* يخلي البوكس بالوسط */
+  border-radius: 10px; /* تعطيه شكل أجمل */
+}
+
+
+.custom-box h2 {
+  margin-bottom: 20px;
+}
+
+.custom-btn {
+  background: #fff;
+  color: #1e40af;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 /* Footer */
 .footer {
   background: #fff;
-  padding: 20px 10px;
-  font-family: Arial, sans-serif;
+  padding: 40px 20px 20px;
+  border-top: 1px solid #eee;
 }
 
 .footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* أربع أعمدة */
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.footer-column h3 {
+  margin-bottom: 10px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+    
+}
+
+.footer-column li {
+  margin-bottom: 8px;
+}
+
+.footer-column h3 {
+
+  color: #1C1C1D;
 }
 
 
+.footer-column a {
+  text-decoration: none;
+  color: #7A7A7E;
+}
+
+.footer-column p {
+  color:#7A7A7E;
+}
+
+.social-icons img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.footer-logo {
+  height: 30px;
+}
+
+.footer-rights {
+  text-decoration: none;
+  color: #666;
+  font-size: 0.9rem;
+}
 
 
 @media (min-width:1024px){
@@ -277,34 +443,10 @@ header {
   
      transform: scale(1.05);
  }
-.nav-icon{
- position: relative;
-  font-size: 20px;
-  color: #2b54a7;
-  cursor: pointer;
+.navbar img {
+
+width:40px;
 }
-.nav-icon .count{
-  position: absolute;
-  top: -8px;
-  right: -10px;
-  background-color: #2f56a5;
-  font-size: 12px;
-  border-radius: 50%;
-  padding: 2px 6px;
-  line-height: 1;
-  color: rgb(255, 255, 255);
-}
-.navbar a::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background-color: #1f4ed3;
-  transition: width 0.3s ease;
-}
-.navbar a:hover::after{ width: 100%; }
 
 .signup {
   background:#2F56A5;
@@ -324,6 +466,7 @@ header {
     background-color: #4582a0;
     transform: scale(1.05);
 }
+
 /* Hero */
 .hero {
   position: relative;
@@ -335,7 +478,7 @@ header {
 }
  .hero h1 {
    font-size:44px;
-   margin-bottom: 10px;
+
 text-align: left;
 margin: 40px;
 color:#2F56A5;
