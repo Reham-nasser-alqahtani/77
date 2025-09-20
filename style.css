@@ -1,4 +1,4 @@
-/* ===== Base: Mobile-first ===== */
+
 body {
   margin: 0;
   font-family: sans-serif;
@@ -291,6 +291,7 @@ color: #2F56A5;
 .reviews p {
 
 color: #5A6473;
+
 }
 
 .reviews img {
